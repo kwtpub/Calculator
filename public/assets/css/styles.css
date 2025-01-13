@@ -1,0 +1,76 @@
+body {
+    background-color: rgb(25, 24, 24);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Courier New', Courier, monospace;
+}
+.main-calculator-container {
+    width: 500px;
+    height: 500px;
+    background-color: black;
+    background-image: url(/public/assets/img/background-image.jpg);
+    opacity: 0.8;
+    box-shadow: 7px 5px 3px black ;
+    display: grid;
+    grid-template-columns: 2fr 2fr 1.5fr;
+    grid-template-rows: 1.5fr 2fr 2fr;
+    grid-template-areas:
+    'a a a'
+    'b b c'
+    'b b c';
+
+}
+.el {
+    background-color: rgb(46, 46, 87);
+    opacity: 0.8;
+}
+.input-box {
+    background-color: black;
+    grid-area: a;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: right;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 20px;
+    color: white;
+}
+.num-box {
+    background-color: azure;
+    grid-area: b;
+    display: flex;
+    flex-wrap: wrap;    
+}
+
+.num-box button {
+    height: 33.333%;
+    width: 33.333%;
+    color: white;
+    background-color: black;
+    font-size:16px;
+    border: 0px solid black;
+}
+.num-box button:active {
+    border: 2px solid white;
+}
+
+.logicSimbol-box {
+background-color: black;
+grid-area: c;
+display: flex;
+flex-wrap: wrap;
+box-sizing: border-box;
+}
+.logicSimbol-box button{
+    width: 100%;
+    background-color: black;
+    color: white;
+    font-size:16px;
+    border: 2px solid black;
+}
+.logicSimbol-box button:active {
+    border: 2px solid white;
+}
+
