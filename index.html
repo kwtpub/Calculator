@@ -20,6 +20,9 @@
         </div>
 
         <div class="el num-box">
+            <button onclick="findPercentage()">%</button>
+            <button onclick="addNum(2)">+/-</button>
+            <button onclick="remove()">C</button>
             <button onclick="addNum(1)">1</button>
             <button onclick="addNum(2)">2</button>
             <button onclick="addNum(3)">3</button>
@@ -29,13 +32,16 @@
             <button onclick="addNum(7)">7</button>
             <button onclick="addNum(8)">8</button>
             <button onclick="addNum(9)">9</button>
+            <button onclick="addNum(0)">0</button>
+            <button onclick="addLogic('.')">,</button>
+            <button onclick=""></button>
         </div>
 
         <div class="el logicSimbol-box">
-            <button onclick="addNum('/')">/</button>
-            <button onclick="addNum('*')">X</button>
-            <button onclick="addNum('-')">-</button>
-            <button onclick="addNum('+')">+</button>
+            <button onclick="addLogic('/')">/</button>
+            <button onclick="addLogic('*')">X</button>
+            <button onclick="addLogic('-')">-</button>
+            <button onclick="addLogic('+')">+</button>
             <button onclick="result()">=</button>
         </div>
 
@@ -43,13 +49,35 @@
 </body>
   
   <script>
+    const logicSymbol = ['-', '/', '*', '+', '=', '.']
     let inputBox = document.getElementById('inp');
     function addNum(x) {
+        if (inputBox.innerText.length > 44) {
+            alert('Кол-во символов привышено')
+            return
+        }
         return inputBox.innerHTML += x;
     }
+
     function result() {
         console.log(eval(inputBox))
         return inputBox.innerHTML= eval(inputBox.innerText)
+    }
+    function remove() {
+        return inputBox.innerHTML = '';
+    } 
+    function addLogic(x) {
+        if (logicSymbol.includes(inputBox.innerText.slice(-1))) {
+            return
+        }
+        if (inputBox.innerText.length > 44) {
+            alert('Кол-во символов привышено')
+            return
+        }
+        return inputBox.innerHTML += x;
+    }
+    function findPercentage() {
+        return inputBox.innerText = eval(inputBox.innerText + '/ 100')
     }
   </script>
 </html>
