@@ -30,8 +30,9 @@ body {
     grid-area: a;
     display: flex;
     flex-wrap: wrap;
+    flex-direction:column;
     justify-content: right;
-    align-items: center;
+    align-items: end;
     box-sizing: border-box;
     padding: 20px;
     color: white;
@@ -73,4 +74,12 @@ box-sizing: border-box;
 .logicSimbol-box button:active {
     border: 0.5px solid white;
 }
-
+button.big-button {
+    width: 66.666%;
+}
+#inp {
+    padding-top: 20px;
+}
+#inp1 {
+    cursor: pointer;
+}
